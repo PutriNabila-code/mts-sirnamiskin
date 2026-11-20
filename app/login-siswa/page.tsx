@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -12,6 +13,12 @@ export default function LoginSiswaPage() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const inputStyle = {
+    color: "#111827",
+    WebkitTextFillColor: "#111827",
+    colorScheme: "light" as const,
+  };
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -98,7 +105,8 @@ export default function LoginSiswaPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Masukkan email"
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-100"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm !text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-100"
+                style={inputStyle}
               />
             </div>
 
@@ -120,7 +128,8 @@ export default function LoginSiswaPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Masukkan password"
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-100"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm !text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-100"
+                style={inputStyle}
               />
             </div>
 
