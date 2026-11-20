@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -33,13 +34,18 @@ export default function LoginAdminPage() {
       }
 
       alert("Login berhasil!");
-
       router.push("/admin");
     } catch (error) {
       alert("Terjadi kesalahan. Silakan coba lagi.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const inputStyle = {
+    color: "#111827",
+    WebkitTextFillColor: "#111827",
+    colorScheme: "light" as const,
   };
 
   return (
@@ -115,7 +121,8 @@ export default function LoginAdminPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Masukkan email admin"
-                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3.5 text-gray-800 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
+                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3.5 !text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
+                style={inputStyle}
               />
             </div>
 
@@ -136,7 +143,8 @@ export default function LoginAdminPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Masukkan kata sandi"
-                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3.5 text-gray-800 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
+                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3.5 !text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
+                style={inputStyle}
               />
             </div>
 
